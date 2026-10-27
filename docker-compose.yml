@@ -1,0 +1,21 @@
+
+services:
+  craftworkshop-backend:
+    image: keerthinarne26/docker-backend-2400090216:latest
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: craftworkshop-backend
+    ports:
+      - "8081:8081"
+
+  craftworkshop-frontend:
+    image: keerthinarne26/docker-frontend-2400090216:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: craftworkshop-frontend
+    ports:
+      - "8082:80"
+    depends_on:
+      - craftworkshop-backend
