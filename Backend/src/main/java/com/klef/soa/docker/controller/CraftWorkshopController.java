@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.*;
 import com.klef.soa.docker.entity.CraftWorkshopEntity;
 import com.klef.soa.docker.service.CraftWorkshopService;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "http://localhost:8082"
+})
 @RestController
 public class CraftWorkshopController {
 
